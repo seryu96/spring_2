@@ -61,7 +61,7 @@
 	     
 	    nhn.husky.EZCreator.createInIFrame({
 	        oAppRef: editor_object,
-	        elPlaceHolder: "contents1",
+	        elPlaceHolder: "contents",
 	        sSkinURI: "../resources/SE2/SmartEditor2Skin.html",
 	        htParams : {
 	            // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
@@ -76,7 +76,7 @@
 	    //전송버튼 클릭이벤트
 	    $("#savebutton").click(function(){
 	        //id가 smarteditor인 textarea에 에디터에서 대입
-	        editor_object.getById["contents1"].exec("UPDATE_CONTENTS_FIELD", []);
+	        editor_object.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
 	         
 	        // 이부분에 에디터 validation 검증
 	         
@@ -87,7 +87,7 @@
 </script>
 <body>
 	<h1>${board} Update</h1>
-	<form action="${board}Update" method="post">
+	<form id="frm" action="${board}Update" method="post" enctype="multipart/form-data">
 		<table class="table table-hover">
 			<tr>
 				<td>Title</td>
@@ -113,9 +113,9 @@
 		</table>
 		<input type="button" value="File Add" id="add">
 		<div id="files"></div>
-		<textarea id="contents1" name="contents" style="resize: none; height: 500px">${view.contents}</textarea>
+		<textarea id="contents" name="contents" style="resize: none; width:100%; height: 500px">${view.contents}</textarea>
 		
-		<button class="btn btn-default">Update</button>
+		<button id="savebutton" class="btn btn-default">Update</button>
 	</form> 
 </body>
 </html>

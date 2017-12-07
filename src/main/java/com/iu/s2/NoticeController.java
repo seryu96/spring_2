@@ -115,7 +115,7 @@ public class NoticeController {
 		String message = "FAIL";
 		if(result > 0)
 			message = "SUCCESS";
-		ra.addFlashAttribute(message);
+		ra.addFlashAttribute("message", message);
 		
 		return "redirect:./noticeList";
 	}

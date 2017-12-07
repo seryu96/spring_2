@@ -97,7 +97,7 @@
 		<div id="files"></div>
 		<textarea id="contents" name="contents"></textarea>
 		
-		<button class="btn btn-default">Write</button>
+		<button id="savebutton" class="btn btn-default">Write</button>
 	</form>
 </body>
 </html>
